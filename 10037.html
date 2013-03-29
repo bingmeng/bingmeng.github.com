@@ -8,7 +8,7 @@
     <style type="text/css">
 		body
 		{
-			font:16px/1.5 arial,宋体,sans-serif;
+			font:300 16px/1.5 arial,宋体,sans-serif;
 			padding:0 0 50px 0;
 		}
 		.cardFirstTd
@@ -20,7 +20,15 @@
 		{
 			width:100%;
 		}
-		#infoTable td
+		#table2
+		{
+			border-collapse:collapse;
+		}
+		#table2 td
+		{
+			border:1px solid;
+		}
+		td
 		{
 			vertical-align:top;
 		}
@@ -28,6 +36,15 @@
 		{
 			width:100%;
 			margin:0 auto;
+		}
+		div.line
+		{
+			width:100%;
+			height:5px;
+			border-color:#999;
+			border-width:1px 0 0 0;
+			border-style:solid;
+			clear:both;
 		}
 		#pic1
 		{
@@ -42,7 +59,8 @@
       <p>
       <img id="pic1" src="images/10037.jpg" />
       &nbsp;&nbsp;&nbsp;&nbsp;孙中山，本名孙文，谱名德明，字载之，号日新，又号逸仙，幼名帝象。中国近代民主主义革命先驱，中华民国和中国国民党创始人，三民主义的倡导者。首举彻底反封建的旗帜，“起共和而终帝制”。1905年成立中国同盟会。1911年辛亥革命后被推举为中华民国临时大总统。1929年6月1日，根据其生前遗愿，陵墓永久迁葬于南京钟山中山陵。1940年，国民政府通令全国，尊称其为“中华民国国父”。他是一位在海峡两岸都受到敬重的革命家，中华民国尊其为国父、中国国民党尊其为总理，毛泽东和中国共产党称孙中山为“中国近代民主革命的伟大先行者”。</p>
-      <table id="infoTable">
+	  <div class="line"></div>
+	  <table id="infoTable">
         <tbody>
           <tr>
             <td class="seperateTd">
@@ -198,9 +216,11 @@
           </tr>
         </tbody>
       </table>
-      <iframe style="width:100%;height:400px;" src="http://player.youku.com/embed/XMzM4ODM3Mjg=" frameborder="0"
+      <div class="line"></div>
+	  <iframe style="width:100%;height:400px;" src="http://player.youku.com/embed/XMzM4ODM3Mjg=" frameborder="0"
       allowfullscreen=""></iframe>
-      <table id="table2">
+      <div class="line"></div>
+	  <table id="table2">
         <tbody>
           <tr>
             <td class="cardFirstTd" align="left" valign="top" height="0">祖籍</td>
