@@ -12,7 +12,8 @@
 		}
 		body, td
 		{
-			font:300 16px/1.5 arial,宋体,sans-serif;
+			font-size:16px/1.5;
+			font-family:arial,tahoma,sans-serif;
 		}
 		td.cardFirstTd
 		{
@@ -54,10 +55,14 @@
 		}
 		#pic1
 		{
-			width:170px;
+			width:160px;
 			float:left;
 			padding:0 10px 10px 0;
 		}        
+		#seperateTd1.cardSecondTd
+		{
+			width:200px;
+		}
 </style>
   </head>
   <body>
@@ -69,11 +74,11 @@
 	  <table id="infoTable">
         <tbody>
           <tr>
-            <td class="seperateTd">
+            <td id="seperateTd1">
               <table cellpadding="0" cellspacing="0">
                 <tbody>
                   <tr>
-                    <td class="cardFirstTd">姓名：<span></span></td>
+                    <td class="cardFirstTd">姓名：</td>
                     <td class="cardSecondTd">孙文</td>
                   </tr>
                   <tr>
