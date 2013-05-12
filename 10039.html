@@ -148,14 +148,34 @@
 				</div>
 			</div>
 		</div>
+		<div data-role="page" id="settings_page">
+			<div data-role="header">
+				<h2>页面设置</h2>
+			</div>
+			<div data-role="content">
+				<p>夜间模式</p>
+				<p>字体大小</p>
+			</div>
+		</div>
 		<script type="text/javascript">
-			$("#index").bind("click", function () {
+			$("#index").click(function () {
 				if ($("#index_panel").hasClass("ui-panel-open")) {
 					$("#index").css("background", "");
 					$("#index_panel").panel("close");
 				} else {
 					$("#index").css("background", "#333");
 					$("#index_panel").panel("open");
+				}
+			});
+			$("#settings").click(function () {
+				if (window.settings_dialog) {
+					window.settings_dialog = false;
+					$("#settings").css("background", "");
+					$("#settings_page").dialog("close");
+				} else {
+					window.settings_dialog = true;
+					$("#settings").css("background", "#333");
+					$.mobile.changePage("#settings_page", {role:"dialog"});
 				}
 			});
 		</script>
