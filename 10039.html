@@ -99,7 +99,7 @@
 			{
 				font-size:16px;
 				font-weight:700;
-				color:#333;
+				color:#fff;
 			}
 			#ul_index li
 			{
@@ -112,7 +112,6 @@
 		<script src="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
 	</head>
 	<body>
-		<base href="http://baike.baidu.com" />
 		<div id="topbar">
 			<a class="home">
 				<span class="home_pic"></span>
@@ -133,7 +132,7 @@
 				
 			
 			</div>
-			<div data-role="panel" id="index_panel" data-theme="b" data-display="reveal" data-position="right" data-swipe-close="false">
+			<div data-role="panel" id="index_panel" data-theme="a" data-display="reveal" data-position="right" data-swipe-close="false">
 				<div class="panel-content">
 					<ul id="ul_index">
 						<li>名片</li>
@@ -152,8 +151,10 @@
 		<script type="text/javascript">
 			$("#index").bind("click", function () {
 				if ($("#index_panel").hasClass("ui-panel-open")) {
+					$("#index").css("background", "");
 					$("#index_panel").panel("close");
 				} else {
+					$("#index").css("background", "#333");
 					$("#index_panel").panel("open");
 				}
 			});
