@@ -107,6 +107,12 @@
 			#settings_page
 			{
 				margin-top:45px;
+				font-size:16px;
+				font-weight:700;
+			}
+			#settings_page label
+			{
+				float:left;
 			}
 		</style>
 		<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
@@ -131,7 +137,8 @@
 		<div data-role="page" id="home_page" style="margin-top:45px;">
 			<div data-role="content">
 
-				
+
+
 			
 			</div>
 			<div data-role="panel" id="index_panel" data-theme="a" data-display="reveal" data-position="right" data-swipe-close="false" data-dismissible="false">
@@ -155,14 +162,27 @@
 				<h2>页面设置</h2>
 			</div>
 			<div data-role="content">
-				<p>夜间模式</p>
-				<p>字体大小</p>
+				<div data-role="content">
+					<label for="flip-0">夜间模式</label>
+					<select name="flip-0" id="flip-0" data-role="slider"  data-theme="a">
+						<option value="off">关</option>
+						<option value="on">开</option>
+					</select>
+				</div>
+				<div data-role="content">
+					<label for="flip-0">字体大小</label>
+					<select name="flip-0" id="flip-0" data-role="slider"  data-theme="a">
+						<option value="off">小</option>
+						<option value="on">大</option>
+					</select>
+				</div>
 			</div>
 		</div>
+
 		<script type="text/javascript">
 			function openIndex() {
 				window.index_state = true;
-				$("#index").css("background", "#ccc");
+				$("#index").css("background", "#aaa");
 				$("#settings").css("opacity", "0.3");
 				$("#index_panel").panel("open");
 			}
@@ -174,7 +194,7 @@
 			}
 			function openSettings() {
 				window.settings_state = true;
-				$("#settings").css("background", "#ccc");
+				$("#settings").css("background", "#aaa");
 				$("#index").css("opacity", "0.3");
 				$.mobile.changePage("#settings_page", {role:"dialog"});
 			}
