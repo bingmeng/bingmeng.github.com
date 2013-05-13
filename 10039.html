@@ -293,7 +293,9 @@
 				$("#index").css("display", "none");
 				$("#profile").removeClass("active");
 				$("#message").removeClass("active");
-				$.mobile.showPageLoadingMsg( "a", "正在加载", false );
+				window.loading_state = true;
+				$("#settings").css("opacity", "0.3");
+				$.mobile.showPageLoadingMsg( "a", "正在加载相册", false );
 			}
 			function openMessage() {
 				window.profile_state = false;
@@ -303,7 +305,9 @@
 				$("#index").css("display", "none");
 				$("#profile").removeClass("active");
 				$("#album").removeClass("active");
-				$.mobile.showPageLoadingMsg( "a", "正在加载", false );
+				window.loading_state = true;
+				$("#settings").css("opacity", "0.3");
+				$.mobile.showPageLoadingMsg( "a", "正在加载留言", false );
 			}
 			function openProfile() {
 				window.profile_state = true;
@@ -313,7 +317,10 @@
 				$("#index").css("display", "");
 				$("#message").removeClass("active");
 				$("#album").removeClass("active");
-				$.mobile.showPageLoadingMsg( "a", "正在加载", false );
+				window.loading_state = true;
+				$("#index").css("opacity", "0.3");
+				$("#settings").css("opacity", "0.3");
+				$.mobile.showPageLoadingMsg( "a", "正在加载主页", false );
 			}
 			window.index_state = false;
 			window.settings_state = false;
@@ -321,8 +328,9 @@
 			window.profile_state = true;
 			window.album_state = false;
 			window.message_state = false;
+			window.loading_state = false;
 			$("#index").click(function () {
-				if (window.settings_state) {
+				if (window.settings_state || window.loading_state) {
 					return;
 				}
 				if (window.index_state) {
@@ -332,7 +340,7 @@
 				}
 			});
 			$("#settings").click(function () {
-				if (window.index_state) {
+				if (window.index_state || window.loading_state) {
 					return;
 				}
 				if (window.settings_state) {
