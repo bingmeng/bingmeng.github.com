@@ -186,6 +186,10 @@
 				height:90px;
 				font-size:12px;
 			}
+			#main_page div.album_bottom
+			{
+				text-align:center;
+			}
 			div.ui-content
 			{
 				padding:30px 5px 20px 5px;
@@ -378,7 +382,8 @@
 				+ img_html("1985", "images/129888079.jpg", "伊朗马什哈德，人们托住被吊起来处决的男子，试图挽救他的生命。")
 				+ img_html("1982", "images/2009121018362959243.jpg", "根据伊斯兰教法，受害者家人有权选择赦免还是处决罪犯。")
 				+ img_html("1973", "images/a35ae9ea122d7585d739c94d.jpg", "英国伯克郡，英女王伊丽莎白二世一身村姑装扮参加温莎马展。她一会儿吐舌卖萌，一会儿神情狰狞，表情十分多变。")
-				+ img_html("1958", "images/qlql085133104z.jpg", "俄罗斯莫斯科，一名总统卫队的士兵走过红场。");
+				+ img_html("1958", "images/qlql085133104z.jpg", "俄罗斯莫斯科，一名总统卫队的士兵走过红场。")
+				+ '<div class="album_bottom">...</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				setTimeout(function () {
 					$.mobile.hidePageLoadingMsg();
