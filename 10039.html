@@ -397,8 +397,8 @@
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
-					$("#album_list").fadeOut();
-					$("#album_show").fadeIn();
+					$("#album_list").fadeOut(0);
+					$("#album_show").fadeIn(0);
 				});
 				setTimeout(function () {
 					$.mobile.hidePageLoadingMsg();
