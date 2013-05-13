@@ -190,16 +190,19 @@
 			{
 				text-align:center;
 			}
+			#album_show
+			{
+				display:none;
+			}
+			#album_show_pic
+			{
+				width:100%;
+			}
 			div.ui-content
 			{
 				padding:30px 5px 20px 5px;
 				background:#fff;
-			}
-			div.ui-panel-content-wrap
-			{
-				background:#fff;
-				font-size:16px;
-				font-size:700;
+				min-height:inherit;
 			}
 		</style>
 		<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
@@ -373,20 +376,30 @@
 			}
 			function loadAlbum() {
 				var str_html = ''
-				+ img_html("2013", "images/1231231.jpg", "全家人一起在海河边吃烧烤。")
-				+ img_html("2012", "images/201238yidbbi0i2n3y3ejf.jpg", "在提问环节中，主持人陈辰提问章子怡男友问题，章子怡顾左右而言他，被陈辰说“阅男无数”生气提前离席。")
-				+ img_html("2010", "images/1888277.jpg", "章子怡应邀出席。派对上，章子怡与神秘外国男子贴耳热聊，俩人聊得十分投机。")
-				+ img_html("2001", "images/01300000329092127364794228120.jpg", "猫头鹰趾高气昂的表情看起来非常滑稽，很难忍住不笑。")
-				+ img_html("1997", "images/a35ae9ea122d7585d739c94d.jpg", "它们不会事先发出警示，突然就移动到任意一个方向，毫无规律，无法预测，相机对焦也很难。")
-				+ img_html("1993", "images/162109-491.jpg", "不过这些猫头鹰绝对是我的最爱，拍摄它们我从来都不会厌烦。")
-				+ img_html("1987", "images/W020080627294501098240.jpg", "照片中的猫头鹰在追踪猎物时颇有行军风范。")
-				+ img_html("1987", "images/10037-4.jpg", "朝鲜平壤，金正恩携夫人李雪主在体育场观看男子足球比赛。")
-				+ img_html("1985", "images/129888079.jpg", "伊朗马什哈德，人们托住被吊起来处决的男子，试图挽救他的生命。")
-				+ img_html("1982", "images/2009121018362959243.jpg", "根据伊斯兰教法，受害者家人有权选择赦免还是处决罪犯。")
-				+ img_html("1973", "images/a35ae9ea122d7585d739c94d.jpg", "英国伯克郡，英女王伊丽莎白二世一身村姑装扮参加温莎马展。她一会儿吐舌卖萌，一会儿神情狰狞，表情十分多变。")
-				+ img_html("1958", "images/qlql085133104z.jpg", "俄罗斯莫斯科，一名总统卫队的士兵走过红场。")
-				+ '<div class="album_bottom">...</div>';
+				+ '<div id="album_list">'
+				+ 	img_html("2013", "images/1231231.jpg", "全家人一起在海河边吃烧烤。")
+				+ 	img_html("2012", "images/201238yidbbi0i2n3y3ejf.jpg", "在提问环节中，主持人陈辰提问章子怡男友问题，章子怡顾左右而言他，被陈辰说“阅男无数”生气提前离席。")
+				+ 	img_html("2010", "images/1888277.jpg", "章子怡应邀出席。派对上，章子怡与神秘外国男子贴耳热聊，俩人聊得十分投机。")
+				+ 	img_html("2001", "images/01300000329092127364794228120.jpg", "猫头鹰趾高气昂的表情看起来非常滑稽，很难忍住不笑。")
+				+ 	img_html("1997", "images/a35ae9ea122d7585d739c94d.jpg", "它们不会事先发出警示，突然就移动到任意一个方向，毫无规律，无法预测，相机对焦也很难。")
+				+ 	img_html("1993", "images/162109-491.jpg", "不过这些猫头鹰绝对是我的最爱，拍摄它们我从来都不会厌烦。")
+				+ 	img_html("1987", "images/W020080627294501098240.jpg", "照片中的猫头鹰在追踪猎物时颇有行军风范。")
+				+ 	img_html("1987", "images/10037-4.jpg", "朝鲜平壤，金正恩携夫人李雪主在体育场观看男子足球比赛。")
+				+ 	img_html("1985", "images/129888079.jpg", "伊朗马什哈德，人们托住被吊起来处决的男子，试图挽救他的生命。")
+				+ 	img_html("1982", "images/2009121018362959243.jpg", "根据伊斯兰教法，受害者家人有权选择赦免还是处决罪犯。")
+				+ 	img_html("1973", "images/a35ae9ea122d7585d739c94d.jpg", "英国伯克郡，英女王伊丽莎白二世一身村姑装扮参加温莎马展。她一会儿吐舌卖萌，一会儿神情狰狞，表情十分多变。")
+				+ 	img_html("1958", "images/qlql085133104z.jpg", "俄罗斯莫斯科，一名总统卫队的士兵走过红场。")
+				+ 	'<div class="album_bottom">...</div>'
+				+ '</div>'
+				+ '<div id="album_show">'
+				+ 	'<img id="album_show_pic" />'
+				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
+				$(".album_pic").click(function () {
+					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
+					$("#album_list").fadeOut();
+					$("#album_show").fadeIn();
+				});
 				setTimeout(function () {
 					$.mobile.hidePageLoadingMsg();
 					$("#main_page").removeClass("hidden");
