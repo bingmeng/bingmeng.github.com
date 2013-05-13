@@ -179,7 +179,6 @@
 				float:left;
 				margin-right:10px;
 				background-size:90px;
-				background-image:url('images/1231231.jpg');
 			}
 			#main_page .album_text
 			{
@@ -361,21 +360,29 @@
 				$.mobile.showPageLoadingMsg( "a", "正在加载主页", false );
 			}
 			function loadAlbum() {
-				var img_html = ''
-				+ '<div class="album_cell">'
-				+ 	'<div class="album_date">1978<span>年</span></div>'
-				+ 	'<div class="album_pic"></div>'
-				+ 	'<div class="album_text">长沙，一起在湘江边放天灯。</div>'
-				+ '</div>';
 				var str_html = ''
-				+ img_html
-				+ img_html
-				+ img_html;
+				+ img_html("2013", "images/1231231.jpg", "全家人一起在海河边吃烧烤。")
+				+ img_html("2012", "images/201238yidbbi0i2n3y3ejf.jpg", "全家人一起在海河边吃烧烤。")
+				+ img_html("2010", "images/1888277.jpg", "全家人一起在海河边吃烧烤。")
+				+ img_html("2001", "images/01300000329092127364794228120.jpg", "全家人一起在海河边吃烧烤。")
+				+ img_html("1997", "images/a35ae9ea122d7585d739c94d.jpg", "全家人一起在海河边吃烧烤。")
+				+ img_html("1993", "images/162109-491.jpg", "全家人一起在海河边吃烧烤。")
+				+ img_html("1987", "images/W020080627294501098240.jpg", "全家人一起在海河边吃烧烤。")
+				+ img_html("1987", "images/10037-4.jpg", "全家人一起在海河边吃烧烤。");
 				$("#main_page")[0].innerHTML = str_html;
 				setTimeout(function () {
 					$.mobile.hidePageLoadingMsg();
 					$("#main_page").removeClass("hidden");
-				}, 1000)
+				}, 1000);
+				function img_html(date, pic, text) {
+					var str = ''
+					+ '<div class="album_cell">'
+					+ 	'<div class="album_date">' + date + '<span>年</span></div>'
+					+ 	'<div class="album_pic" style="background-image:url(' + pic + ');"></div>'
+					+ 	'<div class="album_text">' + text + '</div>'
+					+ '</div>';
+					return str;
+				}
 			}
 			window.index_state = false;
 			window.settings_state = false;
