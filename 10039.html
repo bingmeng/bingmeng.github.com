@@ -257,12 +257,15 @@
 			}
 			function openHome() {
 				window.home_state = true;
-				window.profile_state = true;
-				window.album_state = false;
-				window.message_state = false;
 				$("#home").css("background", "#bbb");
 				$("#navigator").css("opacity", "1");
-				$("#profile").addClass("active");
+				if (window.profile_state) {
+					$("#profile").addClass("active");
+				} else if (window.album_state) {
+					$("#album").addClass("active");
+				} else if (message_state) {
+					$("#message_state").addClass("active");
+				}
 				$("#navigator").animate({
 					"margin-left": 0
 				});
@@ -272,11 +275,7 @@
 			}
 			function closeHome() {
 				window.home_state = false;
-				window.profile_state = false;
-				window.album_state = false;
-				window.message_state = false;
 				$("#home").css("background", "");
-				$("#profile").removeClass("active");
 				$("#navigator").animate({
 					"margin-left": "-200px"
 				});
@@ -287,17 +286,41 @@
 				});
 			}
 			function openAlbum() {
-				window.album_state = true;
 				window.profile_state = false;
+				window.album_state = true;
 				window.message_state = false;
 				$("#album").addClass("active");
+				$("#index").css("display", "none");
 				$("#profile").removeClass("active");
 				$("#message").removeClass("active");
+				$.mobile.showPageLoadingMsg( "a", "正在加载", false );
+			}
+			function openMessage() {
+				window.profile_state = false;
+				window.album_state = false;
+				window.message_state = true;
+				$("#message").addClass("active");
+				$("#index").css("display", "none");
+				$("#profile").removeClass("active");
+				$("#album").removeClass("active");
+				$.mobile.showPageLoadingMsg( "a", "正在加载", false );
+			}
+			function openProfile() {
+				window.profile_state = true;
+				window.album_state = false;
+				window.message_state = false;
+				$("#profile").addClass("active");
+				$("#index").css("display", "");
+				$("#message").removeClass("active");
+				$("#album").removeClass("active");
 				$.mobile.showPageLoadingMsg( "a", "正在加载", false );
 			}
 			window.index_state = false;
 			window.settings_state = false;
 			window.home_state = false;
+			window.profile_state = true;
+			window.album_state = false;
+			window.message_state = false;
 			$("#index").click(function () {
 				if (window.settings_state) {
 					return;
@@ -328,9 +351,19 @@
 					openHome();
 				}
 			});
+			$("#profile").click(function () {
+				if (!window.profile_state) {
+					openProfile();
+				}
+			});
 			$("#album").click(function () {
 				if (!window.album_state) {
 					openAlbum();
+				}
+			});
+			$("#message").click(function () {
+				if (!window.message_state) {
+					openMessage();
 				}
 			});
 		</script>
