@@ -37,6 +37,9 @@
 				border-right:1px solid #e0e0e0;
 				text-decoration:none;
 				text-shadow:none;
+				background:#f2f2f2;
+				position:relative;
+				z-index:10000;
 			}
 			#topbar span.home_pic
 			{
@@ -76,6 +79,9 @@
 			{
 				width:200px;
 				height:100%;
+				position:relative;
+				left:-200px;
+				z-index:9999;
 				font-size:16px;
 				font-weight:700;
 				border-left:1px solid #fafafa;
@@ -140,11 +146,11 @@
 	</head>
 	<body>
 		<div id="topbar">
-			<a class="home">
+			<a class="home" id="home">
 				<span class="home_pic"></span>
 				<span class="home_word">个人主页</span>
 			</a>
-			<div class="nav">
+			<div class="nav" id="navigator">
 				<a id="profile">
 					<span>档案</span>
 				</a>
@@ -255,6 +261,11 @@
 				} else {
 					openSettings();
 				}
+			});
+			$("#home").click(function () {
+				$("#navigator").animate({
+					"left": 0
+				});
 			});
 		</script>
 	</body>
