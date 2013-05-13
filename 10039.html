@@ -403,6 +403,7 @@
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
 					$("#album_list").fadeOut(0);
 					$("#album_show").fadeIn(0);
+					document.body.scrollTop = 0;
 				});
 				setTimeout(function () {
 					$.mobile.hidePageLoadingMsg();
