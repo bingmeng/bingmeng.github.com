@@ -93,8 +93,18 @@
 			#topbar div.nav a
 			{
 				display:inline-block;
+				height:100%;
+				width:65px;
+				float:left;
+			}
+			#topbar div.nav a span
+			{
 				margin-top:11px;
-				width:60px;
+				display:inline-block;
+			}
+			#topbar div.nav a.active
+			{
+				background:#ddd;
 			}
 			.tools .btn span
 			{
@@ -249,6 +259,7 @@
 				window.home_state = true;
 				$("#home").css("background", "#bbb");
 				$("#navigator").css("opacity", "1");
+				$("#profile").addClass("active");
 				$("#navigator").animate({
 					"margin-left": 0
 				});
@@ -259,6 +270,7 @@
 			function closeHome() {
 				window.home_state = false;
 				$("#home").css("background", "");
+				$("#profile").removeClass("active");
 				$("#navigator").animate({
 					"margin-left": "-200px"
 				});
