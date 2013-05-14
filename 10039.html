@@ -316,8 +316,8 @@
 					<a id="album">
 						<span>相册</span>
 					</a>
-					<a id="message">
-						<span>留言</span>
+					<a id="video">
+						<span>视频</span>
 					</a>
 				</div>
 				<div class="tools" id="tools">
@@ -408,8 +408,8 @@
 					$("#profile").addClass("active");
 				} else if (window.album_state) {
 					$("#album").addClass("active");
-				} else if (message_state) {
-					$("#message_state").addClass("active");
+				} else if (video_state) {
+					$("#video_state").addClass("active");
 				}
 				$("#navigator").animate({
 					"margin-left": 0
@@ -433,12 +433,12 @@
 			function openAlbum() {
 				window.profile_state = false;
 				window.album_state = true;
-				window.message_state = false;
+				window.video_state = false;
 				$("#album").addClass("active");
 				$("#main_page").addClass("hidden");
 				$("#index").css("display", "none");
 				$("#profile").removeClass("active");
-				$("#message").removeClass("active");
+				$("#video").removeClass("active");
 				window.loading_state = true;
 				$("#settings").css("opacity", "0.3");
 				$.mobile.showPageLoadingMsg( "a", "正在加载相册", false );
@@ -447,8 +447,8 @@
 			function openMessage() {
 				window.profile_state = false;
 				window.album_state = false;
-				window.message_state = true;
-				$("#message").addClass("active");
+				window.video_state = true;
+				$("#video").addClass("active");
 				$("#index").css("display", "none");
 				$("#profile").removeClass("active");
 				$("#album").removeClass("active");
@@ -459,11 +459,11 @@
 			function openProfile() {
 				window.profile_state = true;
 				window.album_state = false;
-				window.message_state = false;
+				window.video_state = false;
 				$("#profile").addClass("active");
 				$("#main_page").addClass("hidden");
 				$("#index").css("display", "");
-				$("#message").removeClass("active");
+				$("#video").removeClass("active");
 				$("#album").removeClass("active");
 				window.loading_state = true;
 				$("#index").css("opacity", "0.3");
@@ -532,7 +532,8 @@
 				}, 2000);
 			}
 			function loadProfile() {
-				var str_html = "";
+				var str_html = ''
+				+ 'a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a';
 				$("#main_page")[0].innerHTML = str_html;
 				setTimeout(function () {
 					$.mobile.hidePageLoadingMsg();
@@ -549,7 +550,7 @@
 			window.home_state = false;
 			window.profile_state = true;
 			window.album_state = false;
-			window.message_state = false;
+			window.video_state = false;
 			window.loading_state = false;
 			window.pic_show_state = false;
 			$("#index").click(function () {
@@ -592,8 +593,8 @@
 					openAlbum();
 				}
 			});
-			$("#message").click(function () {
-				if (!window.message_state) {
+			$("#video").click(function () {
+				if (!window.video_state) {
 					openMessage();
 				}
 			});
@@ -616,6 +617,9 @@
 				if (window.pic_show_state) {
 					document.body.scrollTop = document.body.scrollHeight;
 				}
+			});
+			$(document).ready(function () {
+				openProfile();
 			});
 		</script>
 	</body>
