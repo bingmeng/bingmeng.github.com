@@ -234,6 +234,39 @@
 				text-align:center;
 				overflow:visible;
 			}
+			#album_show_top
+			{
+				width:100%;
+				height:44px;
+				background:#333;
+				opacity:0.9;
+				position:fixed;
+				top:0;
+				left:0;
+				border-bottom:1px solid #000;
+			}
+			#show_top_back
+			{
+				float:left;
+				font-size:16px;
+				font-weight:700;
+				color:#fff;
+				width:111px;
+				line-height:44px;
+				border-right:1px solid #000;
+				cursor:pointer;
+			}
+			#show_top_date
+			{
+				border-left:1px solid #666;
+				float:left;
+				line-height:44px;
+				width:100%;
+				margin-left:-115px;
+				font-size:16px;
+				font-weight:700;
+				color:#fff;
+			}
 		</style>
 		<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
@@ -244,7 +277,10 @@
 			<div id="album_show_cell">
 				<img id="album_show_pic" />
 			</div>
-			<div id="album_show_top"></div>
+			<div id="album_show_top">
+				<span id="show_top_back">返回相册</span>
+				<span id="show_top_date">1997</span>
+			</div>
 			<div id="album_show_bottom"></div>
 		</div>
 		<div id="page_box">
