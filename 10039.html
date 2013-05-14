@@ -255,6 +255,7 @@
 				line-height:44px;
 				border-right:1px solid #000;
 				cursor:pointer;
+				position:relative;
 			}
 			#show_top_date
 			{
@@ -490,7 +491,6 @@
 					var tmp_h = $(window).height();
 					var tmp_w = $(window).width();
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
-					window.mengbing = this;
 					$("#show_top_date")[0].innerHTML = this.parentNode.children[0].innerHTML;
 					$("#album_show_bottom")[0].innerHTML = this.parentNode.children[2].innerHTML;
 					$("#album_show_cell").css({"height":55 + tmp_h + "px", "width":tmp_w + "px"});
@@ -573,6 +573,10 @@
 				if (!window.message_state) {
 					openMessage();
 				}
+			});
+			$("#show_top_back").click(function () {
+				$("#page_box").css({"display":""});
+				$("#album_show_box").removeClass("show");
 			});
 		</script>
 	</body>
