@@ -508,6 +508,7 @@
 						$.mobile.hidePageLoadingMsg();
 						$("#album_show_box").addClass("show");
 						$("#page_box").css({"display":"none"});
+						document.body.scrollTop = document.body.scrollHeight;
 					}, 500);
 				});
 				function img_html(date, pic, text) {
@@ -607,6 +608,7 @@
 				} else {
 					$("#album_show_pic").css({"height":tmp_h + "px","width":""});
 				}
+				document.body.scrollTop = document.body.scrollHeight;
 			});
 		</script>
 	</body>
