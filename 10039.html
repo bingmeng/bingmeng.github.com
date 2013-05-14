@@ -225,7 +225,6 @@
 			}
 			#album_show_pic
 			{
-				width:100%;
 				vertical-align:middle;
 			}
 			#album_show_cell
@@ -433,8 +432,15 @@
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
+					var tmp_h = $(window).height();
+					var tmp_w = $(window).width();
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
-					$("#album_show_cell").css({"height":$(window).height() + "px", "width":$(window).width() + "px"});
+					$("#album_show_cell").css({"height":tmp_h + "px", "width":tmp_w + "px"});
+					if ($("#album_show_pic").width() > $("#album_show_pic").height()) {
+						$("#album_show_pic").css({"width":tmp_w + "px"});
+					} else {
+						$("#album_show_pic").css({"height":tmp_h + "px"});
+					}
 					$.mobile.showPageLoadingMsg( "a", "正在加载照片", false );
 					setTimeout(function () {
 						$.mobile.hidePageLoadingMsg();
