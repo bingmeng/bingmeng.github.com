@@ -496,7 +496,9 @@
 					$("#show_top_date")[0].innerHTML = this.parentNode.children[0].innerHTML;
 					$("#album_show_bottom")[0].innerHTML = this.parentNode.children[2].innerHTML;
 					$("#album_show_cell").css({"height":55 + tmp_h + "px", "width":tmp_w + "px"});
-					if ($("#album_show_pic").width() > $("#album_show_pic").height()) {
+					var size_rate = tmp_w/tmp_h;
+					var pic_size_rate = $("#album_show_pic").width()/$("#album_show_pic").height();
+					if (pic_size_rate > size_rate) {
 						$("#album_show_pic").css({"height":"", "width":tmp_w + "px"});
 					} else {
 						$("#album_show_pic").css({"height":tmp_h + "px","width":""});
@@ -597,8 +599,9 @@
 			$(window).resize(function () {
 				var tmp_h = $(window).height();
 				var tmp_w = $(window).width();
-				$("#album_show_cell").css({"height":55 + tmp_h + "px", "width":tmp_w + "px"});
-				if ($("#album_show_pic").width() > $("#album_show_pic").height()) {
+				var size_rate = tmp_w/tmp_h;
+				var pic_size_rate = $("#album_show_pic").width()/$("#album_show_pic").height();
+				if (pic_size_rate > size_rate) {
 					$("#album_show_pic").css({"height":"", "width":tmp_w + "px"});
 				} else {
 					$("#album_show_pic").css({"height":tmp_h + "px","width":""});
