@@ -432,10 +432,10 @@
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
-					var tmp_h = 55 + $(window).height();
+					var tmp_h = $(window).height();
 					var tmp_w = $(window).width();
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
-					$("#album_show_cell").css({"height":tmp_h + "px", "width":tmp_w + "px"});
+					$("#album_show_cell").css({"height":55 + tmp_h + "px", "width":tmp_w + "px"});
 					if ($("#album_show_pic").width() > $("#album_show_pic").height()) {
 						$("#album_show_pic").css({"width":tmp_w + "px"});
 					} else {
