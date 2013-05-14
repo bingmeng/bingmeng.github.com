@@ -407,7 +407,7 @@
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
-					$("#home_page").animate({"left":"-100px"});
+					$("#home_page").animate({"left":"-100%"});
 				});
 				setTimeout(function () {
 					$.mobile.hidePageLoadingMsg();
