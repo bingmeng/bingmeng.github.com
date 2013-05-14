@@ -291,6 +291,32 @@
 			{
 				padding:10px;
 			}
+			#str_profile_card
+			{
+				
+			}
+			#str_profile_card h1
+			{
+				font-size:16px;
+				font-weight:700;
+				margin:0;
+				padding:0;
+			}
+			#str_profile_card div.image
+			{
+				width:120px;
+				height:160px;
+				float:left;
+				margin:0 10px 0 0;
+				background-color:#ddd;
+				background-size:cover;
+			}
+			#str_profile_card p
+			{
+				font-size:12px;
+				margin:0;
+				padding:0;
+			}
 		</style>
 		<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
@@ -536,9 +562,16 @@
 				}, 2000);
 			}
 			function loadProfile() {
+				//人物名片
+				var str_profile_card = ''
+				+ '<div id="str_profile_card">'
+				+ 	'<h1>林徽因</h1>'
+				+ 	'<div class="image"></div>'
+				+ 	'<p>林徽因（1904.06.10--1955.04.01），女。汉族。原名林徽音，出生于浙江杭州，祖籍福建福州。中国著名建筑师、诗人、作家。人民英雄纪念碑和中华人民共和国国徽深化方案的设计者。</p>'
+				+ '</div>';
 				var str_html = ''
 				+ '<div id="profile_box">'
-				+ 'a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a'
+				+ str_profile_card
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				setTimeout(function () {
