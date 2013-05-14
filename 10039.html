@@ -432,7 +432,7 @@
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
-					location.hash = $(window).height();
+					location.hash = $(document).height();
 					var tmp_h = 44 + $(window).height();
 					var tmp_w = $(window).width();
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
