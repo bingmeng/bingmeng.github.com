@@ -12,11 +12,6 @@
 				overflow-x:hidden;
 				font:300 12px/1.5 arial,tahoma,sans-serif;
 			}
-			#home_box
-			{
-				width:100%;
-				overflow-x:hidden;
-			}
 			#topbar
 			{
 				width:100%;
@@ -218,12 +213,16 @@
 			#album_show_box
 			{
 				position:absolute;
-				z-index:10010;
+				z-index:-1;
 				top:0;
-				left:100%;
+				left:0;
 				width:100%;
 				height:100%;
 				background:#000;
+			}
+			#album_show_box.show
+			{
+				z-index:10010;
 			}
 		</style>
 		<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
@@ -231,6 +230,11 @@
 		<script src="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
 	</head>
 	<body>
+		<div id="album_show_box">
+			<img id="album_show_pic" />
+			<div id="album_show_top"></div>
+			<div id="album_show_bottom"></div>
+		</div>
 		<div id="page_box">
 			<div id="topbar">
 				<a class="home" id="home">
@@ -297,11 +301,6 @@
 						</select>
 					</div>
 				</div>
-			</div>
-			<div id="album_show_box">
-				<img id="album_show_pic" />
-				<div id="album_show_top"></div>
-				<div id="album_show_bottom"></div>
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -422,7 +421,11 @@
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
-					$("#album_show_box").animate({"left":"0"});
+					$.mobile.showPageLoadingMsg( "a", "正在加载照片", false );
+					setTimeout(function () {
+						$.mobile.hidePageLoadingMsg();
+						$("#album_show_box").addClass("show");
+					}, 500);
 				});
 				setTimeout(function () {
 					$.mobile.hidePageLoadingMsg();
