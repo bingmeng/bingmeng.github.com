@@ -432,9 +432,8 @@
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
-					location.hash = window.screen.height;
-					var tmp_h = 44 + $(window).height();
-					var tmp_w = $(window).width();
+					var tmp_h = window.screen.height;
+					var tmp_w = window.screen.width;
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
 					$("#album_show_cell").css({"height":tmp_h + "px", "width":tmp_w + "px"});
 					if ($("#album_show_pic").width() > $("#album_show_pic").height()) {
