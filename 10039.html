@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<title>萧朗先生</title>
 		<style type="text/css">
@@ -462,6 +461,7 @@
 				window.album_state = false;
 				window.message_state = false;
 				$("#profile").addClass("active");
+				$("#main_page").addClass("hidden");
 				$("#index").css("display", "");
 				$("#message").removeClass("active");
 				$("#album").removeClass("active");
@@ -469,6 +469,7 @@
 				$("#index").css("opacity", "0.3");
 				$("#settings").css("opacity", "0.3");
 				$.mobile.showPageLoadingMsg( "a", "正在加载主页", false );
+				loadProfile();
 			}
 			function loadAlbum() {
 				var str_html = ''
@@ -507,12 +508,6 @@
 						$("#page_box").css({"display":"none"});
 					}, 500);
 				});
-				setTimeout(function () {
-					$.mobile.hidePageLoadingMsg();
-					$("#main_page").removeClass("hidden");
-					$("#settings").css("opacity", "1");
-					window.loading_state = false;
-				}, 2000);
 				function img_html(date, pic, text) {
 					var str = ''
 					+ '<div class="album_cell">'
@@ -522,6 +517,26 @@
 					+ '</div>';
 					return str;
 				}
+				setTimeout(function () {
+					$.mobile.hidePageLoadingMsg();
+					$("#main_page").removeClass("hidden");
+					$("#settings").css("opacity", "1");
+					window.loading_state = false;
+					closeHome();
+				}, 2000);
+			}
+			function loadProfile() {
+				var str_html = "";
+				$("#main_page")[0].innerHTML = str_html;
+				setTimeout(function () {
+					$.mobile.hidePageLoadingMsg();
+					$("#main_page").removeClass("hidden");
+					$("#settings").css("opacity", "1");
+					$("#index").css("opacity", "1");
+					$("#index").css("display", "");
+					window.loading_state = false;
+					closeHome();
+				}, 2000);
 			}
 			window.index_state = false;
 			window.settings_state = false;
