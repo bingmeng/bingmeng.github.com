@@ -508,7 +508,10 @@
 						$.mobile.hidePageLoadingMsg();
 						$("#album_show_box").addClass("show");
 						$("#page_box").css({"display":"none"});
-						document.body.scrollTop = document.body.scrollHeight;
+						window.pic_show_state = true;
+						if (window.pic_show_state) {
+							document.body.scrollTop = document.body.scrollHeight;
+						}
 					}, 500);
 				});
 				function img_html(date, pic, text) {
@@ -548,6 +551,7 @@
 			window.album_state = false;
 			window.message_state = false;
 			window.loading_state = false;
+			window.pic_show_state = false;
 			$("#index").click(function () {
 				if (window.settings_state || window.loading_state) {
 					return;
@@ -596,6 +600,7 @@
 			$("#show_top_back").click(function () {
 				$("#page_box").css({"display":""});
 				$("#album_show_box").removeClass("show");
+				window.pic_show_state = false;
 			});
 			$(window).resize(function () {
 				var tmp_h = $(window).height();
@@ -608,7 +613,9 @@
 				} else {
 					$("#album_show_pic").css({"height":tmp_h + "px","width":""});
 				}
-				document.body.scrollTop = document.body.scrollHeight;
+				if (window.pic_show_state) {
+					document.body.scrollTop = document.body.scrollHeight;
+				}
 			});
 		</script>
 	</body>
