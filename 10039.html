@@ -212,7 +212,10 @@
 			}
 			#album_show_box
 			{
-				padding-top:44px;
+				position:absolute;
+				z-index:10010;
+				top:0;
+				left:100%;
 				width:100%;
 				height:100%;
 				background:#000;
@@ -247,9 +250,6 @@
 					<span></span>
 				</a>
 			</div>
-		</div>
-		<div id="album_show_box">
-			<img id="album_show_pic" />
 		</div>
 		<div data-role="page" id="home_page" style="margin-top:45px;">
 			<div data-role="content">
@@ -291,6 +291,11 @@
 					</select>
 				</div>
 			</div>
+		</div>
+		<div id="album_show_box">
+			<img id="album_show_pic" />
+			<div id="album_show_top"></div>
+			<div id="album_show_bottom"></div>
 		</div>
 		<script type="text/javascript">
 			function openIndex() {
@@ -410,7 +415,7 @@
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
-					$("#home_page").animate({"left":"-100%"});
+					$("#album_show_box").animate({"left":"0"});
 				});
 				setTimeout(function () {
 					$.mobile.hidePageLoadingMsg();
