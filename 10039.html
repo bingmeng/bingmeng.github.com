@@ -215,6 +215,9 @@
 				width:100%;
 				height:100%;
 				background:#000;
+				display:table-cell;
+				vertical-align:middle;
+				text-align:center;
 			}
 			#album_show_box.show
 			{
@@ -223,6 +226,13 @@
 			#album_show_pic
 			{
 				width:100%;
+				vertical-align:middle;
+			}
+			#album_show_cell
+			{
+				display:table-cell;
+				vertical-align:middle;
+				text-align:center;
 			}
 		</style>
 		<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
@@ -231,7 +241,9 @@
 	</head>
 	<body>
 		<div id="album_show_box">
-			<img id="album_show_pic" />
+			<div id="album_show_cell">
+				<img id="album_show_pic" />
+			</div>
 			<div id="album_show_top"></div>
 			<div id="album_show_bottom"></div>
 		</div>
@@ -421,6 +433,7 @@
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
 					$("#album_show_pic").attr("src", this.style.backgroundImage.replace(/^url[(]|[)]$/g, ""));
+					$("#album_show_cell").css({"height":$(window).height() + "px", "width":$(window).width() + "px"});
 					$.mobile.showPageLoadingMsg( "a", "正在加载照片", false );
 					setTimeout(function () {
 						$.mobile.hidePageLoadingMsg();
