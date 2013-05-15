@@ -287,6 +287,10 @@
 				color:#fff;
 				text-align:left;
 			}
+			.clear_both
+			{
+				clear:both;
+			}
 			#profile_box
 			{
 				padding:10px;
@@ -316,15 +320,20 @@
 			#str_profile_info
 			{
 				clear:both;
+				border-top:1px dotted #ddd;
+				margin-top:5px;
+				padding-top:5px;
 			}
 			#str_profile_info li
 			{
 				font-size:16px;
+				list-style-type:none;
+				margin:0;
+				padding:0;
 			}
 			#str_profile_info li span
 			{
 				font-weight:700;
-				
 			}
 		</style>
 		<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
@@ -577,6 +586,7 @@
 				+ 	'<h1>杨文华</h1>'
 				+ 	'<div class="image"></div>'
 				+	'<p>杨文华（1957.10.13--2011.04.12），男，汉族。1957年生于湖北省襄樊市西平县操军乡青雀村。1973年入读当地第二中学高中。1976年至1997年在家乡务农，并从事木工、手表修理等手工作业。1981年与李秦怡结婚，育有一子一女。1997年起，在北京市康民医院任职电工，负责医院电力建设工作。2011年04月12日上午，在处理康民医院住院部3楼断电问题时，不幸触电身亡，享年54岁。</p>'
+				+	'<div class="clear_both"></div>'
 				+ '</div>';
 				//人物档案
 				var str_profile_info = ''
