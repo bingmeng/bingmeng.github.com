@@ -311,33 +311,33 @@
 				background-color:#ddd;
 				background-size:cover;
 			}
-			#str_profile_card p
+			#str_profile_card p, #str_profile_like p
 			{
 				font-size:16px;
 				margin:0;
 				padding:0;
 			}
-			#str_profile_info
+			#str_profile_info, #str_profile_family, #str_profile_like
 			{
 				clear:both;
 				margin-top:5px;
 				border-top:1px dotted #ddd;
 			}
-			#str_profile_info h2
+			#str_profile_info h2, #str_profile_family h2, #str_profile_like h2
 			{
 				font-size:20px;
 				font-weight:700;
 				margin:0;
 				padding:5px 0 3px 0;
 			}
-			#str_profile_info li
+			#str_profile_info li, #str_profile_family li
 			{
 				font-size:16px;
 				list-style-type:none;
 				margin:0;
 				padding:0;
 			}
-			#str_profile_info li span
+			#str_profile_info li span, #str_profile_family li span
 			{
 				font-weight:700;
 			}
@@ -608,12 +608,29 @@
 				+ 	'<li><span>逝世日期：</span>2011.04.12</li>'
 				+ 	'<li><span>职业：</span>电工</li>'
 				+ 	'<li><span>毕业院校：</span>湖北襄樊第三高级中学</li>'
-				+ 	'<li><span>家庭成员：</span>妻子：李秦怡、儿子：杨晓波、女儿：杨晓莉、孙女：杨玲玲</li>'
+				+ '</div>';
+				var str_profile_family = ''
+				+ '<div id="str_profile_family">'
+				+	'<h2>家庭成员</h2>'
+				+ 	'<li><span>父亲：</span>杨晨生</li>'
+				+ 	'<li><span>母亲：</span>王晓娟</li>'
+				+ 	'<li><span>妻子：</span>李秦怡</li>'
+				+	'<li><span>儿子：</span>杨晓波</li>'
+				+	'<li><span>女儿：</span>杨晓莉</li>'
+				+	'<li><span>孙女：</span>杨玲玲</li>'
+				+ '</div>';
+				var str_profile_like = ''
+				+ '<div id="str_profile_like">'
+				+	'<h2>兴趣爱好</h2>'
+				+	'<p>崇敬毛主席，对主席的生平耳熟能详。</p>'
+				+	'<p>喜欢做自己动手。家里电器坏了都是自己拆开修理。</p>'
 				+ '</div>';
 				var str_html = ''
 				+ '<div id="profile_box">'
 				+ str_profile_card
 				+ str_profile_info
+				+ str_profile_family
+				+ str_profile_like
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				setTimeout(function () {
