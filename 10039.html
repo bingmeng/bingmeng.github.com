@@ -311,19 +311,19 @@
 				background-color:#ddd;
 				background-size:cover;
 			}
-			#str_profile_card p, #str_profile_like p
+			#str_profile_card p, #str_profile_like p, #str_profile_cara p, #str_profile_story p, #str_profile_word p, #str_profile_dream p, #str_profile_want p, #str_profile_study p, #str_profile_work p, #str_profile_wish p
 			{
 				font-size:16px;
 				margin:0;
 				padding:0;
 			}
-			#str_profile_info, #str_profile_family, #str_profile_like
+			#str_profile_info, #str_profile_family, #str_profile_like, #str_profile_cara, #str_profile_story, #str_profile_word, #str_profile_dream, #str_profile_want, #str_profile_study, #str_profile_work, #str_profile_wish
 			{
 				clear:both;
 				margin-top:5px;
 				border-top:1px dotted #ddd;
 			}
-			#str_profile_info h2, #str_profile_family h2, #str_profile_like h2
+			#str_profile_info h2, #str_profile_family h2, #str_profile_like h2, #str_profile_cara h2, #str_profile_story h2, #str_profile_word h2, #str_profile_dream h2, #str_profile_want h2, #str_profile_study h2, #str_profile_work h2, #str_profile_wish h2
 			{
 				font-size:20px;
 				font-weight:700;
@@ -609,6 +609,7 @@
 				+ 	'<li><span>职业：</span>电工</li>'
 				+ 	'<li><span>毕业院校：</span>湖北襄樊第三高级中学</li>'
 				+ '</div>';
+				//家庭成员
 				var str_profile_family = ''
 				+ '<div id="str_profile_family">'
 				+	'<h2>家庭成员</h2>'
@@ -619,11 +620,64 @@
 				+	'<li><span>女儿：</span>杨晓莉</li>'
 				+	'<li><span>孙女：</span>杨玲玲</li>'
 				+ '</div>';
+				//兴趣爱好
 				var str_profile_like = ''
 				+ '<div id="str_profile_like">'
 				+	'<h2>兴趣爱好</h2>'
 				+	'<p>崇敬毛主席，对主席的生平耳熟能详。</p>'
 				+	'<p>喜欢做自己动手。家里电器坏了都是自己拆开修理。</p>'
+				+ '</div>';
+				//人物性格
+				var str_profile_cara = ''
+				+ '<div id="str_profile_cara">'
+				+	'<h2>人物性格</h2>'
+				+	'<p>体贴妻子，对儿女要求严格。</p>'
+				+	'<p>助人为乐，邻家电器坏了都来找他。</p>'
+				+	'<p>乐观，爱开玩笑。</p>'
+				+ '</div>';
+				//生活片段（小故事）
+				var str_profile_story = ''
+				+ '<div id="str_profile_story">'
+				+	'<h2>生活片段</h2>'
+				+	'<p>刚到康民医院做电工的时候，有一次他已经下班在家给玲玲喂饭，突然接到医院的电话，说是急诊部90KW风机变频器有巨大的异常声响，让他去查清问题。他二话没说，把饭碗交给了妻子，很快赶到现场，在当班电工的配合下把变频器拆开检查，经过仔细查找，最终排除了故障，保证了急诊室的用电的正常运行。</p>'
+				+ '</div>';
+				//口头禅、座右铭
+				var str_profile_word = ''
+				+ '<div id="str_profile_word">'
+				+	'<h2>常说的话</h2>'
+				+	'<p>认认真真做事，踏踏实实做人。</p>'
+				+ '</div>';
+				//人生理想
+				var str_profile_dream = ''
+				+ '<div id="str_profile_dream">'
+				+	'<h2>人生理想</h2>'
+				+	'<p>能在老家建一所学校，乡里的孩子上学太难了。</p>'
+				+ '</div>';
+				//临终愿望
+				var str_profile_want = ''
+				+ '<div id="str_profile_want">'
+				+	'<h2>临终愿望</h2>'
+				+	'<p>小儿女玲玲能有个好归宿。</p>'
+				+ '</div>';
+				//求学经历
+				var str_profile_study = ''
+				+ '<div id="str_profile_study">'
+				+	'<h2>求学经历</h2>'
+				+	'<p>1976年高中毕业。</p>'
+				+ '</div>';
+				//工作经历
+				var str_profile_work = ''
+				+ '<div id="str_profile_work">'
+				+	'<h2>工作经历</h2>'
+				+	'<p>1976年至1997年，在家乡西平县务农。</p>'
+				+	'<p>1997年至2011年，北京市康民医院电工。</p>'
+				+ '</div>';
+				//临终寄托
+				var str_profile_wish = ''
+				+ '<div id="str_profile_wish">'
+				+	'<h2>临终寄托</h2>'
+				+	'<p>小孙女能够健康快乐地成长，受到良好的教育，嫁给一个爱她的人。</p>'
+				+	'<p>女儿的家庭幸福美满。</p>'
 				+ '</div>';
 				var str_html = ''
 				+ '<div id="profile_box">'
@@ -631,6 +685,14 @@
 				+ str_profile_info
 				+ str_profile_family
 				+ str_profile_like
+				+ str_profile_cara
+				+ str_profile_story
+				+ str_profile_word
+				+ str_profile_dream
+				+ str_profile_want
+				+ str_profile_study
+				+ str_profile_work
+				+ str_profile_wish
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				setTimeout(function () {
