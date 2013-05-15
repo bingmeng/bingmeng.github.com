@@ -188,7 +188,7 @@
 				height:90px;
 				font-size:12px;
 			}
-			#main_page div.album_bottom
+			#main_page div.content_bottom
 			{
 				text-align:center;
 			}
@@ -540,7 +540,7 @@
 				+ 	img_html("1982", "images/2009121018362959243.jpg", "根据伊斯兰教法，受害者家人有权选择赦免还是处决罪犯。")
 				+ 	img_html("1973", "images/a35ae9ea122d7585d739c94d.jpg", "英国伯克郡，英女王伊丽莎白二世一身村姑装扮参加温莎马展。她一会儿吐舌卖萌，一会儿神情狰狞，表情十分多变。")
 				+ 	img_html("1958", "images/qlql085133104z.jpg", "俄罗斯莫斯科，一名总统卫队的士兵走过红场。")
-				+ 	'<div class="album_bottom">...</div>'
+				+ 	'<div class="content_bottom">...</div>'
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				$(".album_pic").click(function () {
@@ -681,18 +681,19 @@
 				+ '</div>';
 				var str_html = ''
 				+ '<div id="profile_box">'
-				+ str_profile_card
-				+ str_profile_info
-				+ str_profile_family
-				+ str_profile_like
-				+ str_profile_cara
-				+ str_profile_story
-				+ str_profile_word
-				+ str_profile_dream
-				+ str_profile_want
-				+ str_profile_study
-				+ str_profile_work
-				+ str_profile_wish
+				+ 	str_profile_card
+				+ 	str_profile_info
+				+ 	str_profile_family
+				+ 	str_profile_like
+				+ 	str_profile_cara
+				+ 	str_profile_story
+				+ 	str_profile_word
+				+ 	str_profile_dream
+				+ 	str_profile_want
+				+ 	str_profile_study
+				+ 	str_profile_work
+				+ 	str_profile_wish
+				+ 	'<div class="content_bottom">...</div>'
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
 				setTimeout(function () {
