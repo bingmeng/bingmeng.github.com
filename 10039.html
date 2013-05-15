@@ -310,6 +310,8 @@
 				margin:5px 10px 0 0;
 				background-color:#ddd;
 				background-size:cover;
+				background-image:url('images/10039-1.jpg');
+				background-position:center center;
 			}
 			#str_profile_card p, #str_profile_like p, #str_profile_cara p, #str_profile_story p, #str_profile_word p, #str_profile_dream p, #str_profile_want p, #str_profile_study p, #str_profile_work p, #str_profile_wish p
 			{
@@ -390,15 +392,17 @@
 				<div data-role="panel" id="index_panel" data-theme="a" data-display="reveal" data-position="right" data-swipe-close="false" data-dismissible="false">
 					<div class="panel-content">
 						<ul id="ul_index">
-							<li>人物名片</li>
-							<li>个人简介</li>
-							<li>人物性格</li>
-							<li>生活习惯</li>
-							<li>兴趣爱好</li>
-							<li>生平愿望</li>
+							<li>人物档案</li>
 							<li>家庭成员</li>
-							<li>温馨故事</li>
-							<li>寄托</li>
+							<li>兴趣爱好</li>
+							<li>人物性格</li>
+							<li>生活片段</li>
+							<li>常说的话</li>
+							<li>人生理想</li>
+							<li>临终愿望</li>
+							<li>求学经历</li>
+							<li>工作经历</li>
+							<li>临终寄托</li>
 						</ul>
 					</div>
 				</div>
@@ -528,18 +532,18 @@
 			function loadAlbum() {
 				var str_html = ''
 				+ '<div id="album_list">'
-				+ 	img_html("2013", "images/1231231.jpg", "全家人一起在海河边吃烧烤。")
-				+ 	img_html("2012", "images/201238yidbbi0i2n3y3ejf.jpg", "在提问环节中，主持人陈辰提问章子怡男友问题，章子怡顾左右而言他，被陈辰说“阅男无数”生气提前离席。")
-				+ 	img_html("2010", "images/1888277.jpg", "章子怡应邀出席。派对上，章子怡与神秘外国男子贴耳热聊，俩人聊得十分投机。")
-				+ 	img_html("2001", "images/01300000329092127364794228120.jpg", "猫头鹰趾高气昂的表情看起来非常滑稽，很难忍住不笑。")
-				+ 	img_html("1997", "images/a35ae9ea122d7585d739c94d.jpg", "它们不会事先发出警示，突然就移动到任意一个方向，毫无规律，无法预测，相机对焦也很难。")
-				+ 	img_html("1993", "images/162109-491.jpg", "不过这些猫头鹰绝对是我的最爱，拍摄它们我从来都不会厌烦。")
-				+ 	img_html("1987", "images/W020080627294501098240.jpg", "照片中的猫头鹰在追踪猎物时颇有行军风范。")
-				+ 	img_html("1987", "images/10037-4.jpg", "朝鲜平壤，金正恩携夫人李雪主在体育场观看男子足球比赛。")
-				+ 	img_html("1985", "images/129888079.jpg", "伊朗马什哈德，人们托住被吊起来处决的男子，试图挽救他的生命。")
-				+ 	img_html("1982", "images/2009121018362959243.jpg", "根据伊斯兰教法，受害者家人有权选择赦免还是处决罪犯。")
-				+ 	img_html("1973", "images/a35ae9ea122d7585d739c94d.jpg", "英国伯克郡，英女王伊丽莎白二世一身村姑装扮参加温莎马展。她一会儿吐舌卖萌，一会儿神情狰狞，表情十分多变。")
-				+ 	img_html("1958", "images/qlql085133104z.jpg", "俄罗斯莫斯科，一名总统卫队的士兵走过红场。")
+				+ 	img_html("2010", "images/10039-1.jpg", "在女儿家（长沙湘江边）所在的小区门口照相馆拍摄，当时正直盛夏，全家人来长沙消暑。")
+				+ 	img_html("2007", "images/10039-2.jpg", "在办公室和同事老刘讨论问题，老刘和杨先生是十三年的同事，同时也是发小，小时候经常一起研究电路。")
+				+ 	img_html("2003", "images/10039-3.jpg", "在厂里的新人培训中心给新来的电工讲解继电器工作原理，培养新人是杨先生最喜欢的事情之一。")
+				+ 	img_html("2001", "images/10039-4.jpg", "作为专家在长沙市第二中学为同学辅导电路实验课程。")
+				+ 	img_html("1997", "images/10039-5.jpg", "这是厂里的高压车间。杨先生正在和老王装配一个20万伏的变压器。这是新建的车间，杨先生很喜欢这里的环境。")
+				+ 	img_html("1995", "images/10039-6.jpg", "杨先生在帮助老家的邻居们修理卡车传动轴。")
+				+ 	img_html("1988", "images/10039-7.jpg", "秋日的一个下午，杨先生的妻子拍下了杨先生工作的一个瞬间，当时杨先生正在修理高压线路。")
+				+ 	img_html("1987", "images/10039-8.jpg", "邵阳市的盘龙大厦，是杨先生参与的项目之一。图中是杨先生和工友们在部署新设备。")
+				+ 	img_html("1980", "images/10039-9.jpg", "这是杨先生和妻子的结婚照。")
+				+ 	img_html("1975", "images/10039-10.jpg", "杨先生的高中毕业照片，杨先生的妻子在第二排做起第三个。")
+				+ 	img_html("1972", "images/10039-11.jpg", "这张是杨先生的全家福，照片中有杨先生的父母以及妹妹们。")
+				+ 	img_html("1958", "images/10039-12.jpg", "杨先生五个月大的照片。")
 				+ 	'<div class="content_bottom">...</div>'
 				+ '</div>';
 				$("#main_page")[0].innerHTML = str_html;
@@ -592,7 +596,7 @@
 				var str_profile_card = ''
 				+ '<div id="str_profile_card">'
 				+ 	'<h1>杨文华</h1>'
-				+ 	'<div class="image"></div>'
+				+ 	'<div id="str_profile_photo" class="image"></div>'
 				+	'<p>杨文华（1957.10.13--2011.04.12），男，汉族。1957年生于湖北省襄樊市西平县操军乡青雀村。1973年入读当地第二中学高中。1976年至1997年在家乡务农，并从事木工、手表修理等手工作业。1981年与李秦怡结婚，育有一子一女。1997年起，在北京市康民医院任职电工，负责医院电力建设工作。2011年04月12日上午，在处理康民医院住院部3楼断电问题时，不幸触电身亡，享年54岁。</p>'
 				+	'<div class="clear_both"></div>'
 				+ '</div>';
@@ -705,7 +709,9 @@
 					$("#index").css("opacity", "1");
 					$("#index").css("display", "");
 					window.loading_state = false;
-					closeHome();
+					setTimeout(function () {
+						closeHome();
+					}, 100);
 				}, 2000);
 			}
 			window.index_state = false;
