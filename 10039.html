@@ -582,7 +582,9 @@
 					$("#main_page").removeClass("hidden");
 					$("#settings").css("opacity", "1");
 					window.loading_state = false;
-					closeHome();
+					setTimeout(function () {
+						closeHome();
+					}, 100);
 				}, 2000);
 			}
 			function loadProfile() {
